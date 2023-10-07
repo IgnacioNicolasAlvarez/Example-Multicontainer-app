@@ -1,0 +1,8 @@
+{
+    "name": "Worker",
+    "dockerComposeFile": ["../docker-compose.yml"],
+    "service": "worker",
+    "shutdownAction": "none",
+    "extensions": ["johnpapa.vscode-peacock"],
+    "workspaceFolder": "/workspace/worker"
+  }

@@ -1,0 +1,46 @@
+version: '3'
+services:
+  api-books:
+    image: python:3.11-alpine
+    volumes:
+      - .:/workspace:cached
+    command: /bin/sh -c "while sleep 1000; do :; done"
+    depends_on:
+      - postgres
+      - redis
+    links:
+      - worker
+    env_file:
+      - postgres.env  
+      - redis.env 
+    networks:
+      - network
+
+  worker:
+    image: python:3.11-alpine
+    volumes:
+      - .:/workspace:cached
+    command: /bin/sh -c "while sleep 1000; do :; done"
+    depends_on:
+      - postgres
+      - redis
+    env_file:
+      - postgres.env  
+      - redis.env  
+    networks:
+      - network
+
+  redis:
+    image: redis
+    networks:
+      - network
+
+  postgres:
+    image: postgres
+    env_file:
+      - postgres.env  
+    networks:
+      - network
+
+networks:
+  network:

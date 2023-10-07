@@ -1,0 +1,31 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Local development settings
+.env
+
+# Redis
+redis.conf
+
+# Postgres
+*.sql
+*.sql.gz
+*.dump
+*.backup
+*.bak
+*.pg_dump
+*.pg_dumpall
+*.pg_restore
+*.sql.tar.gz
+
+# Logs
+*.log
+*.out
+*.err
+
+# Other
+.DS_Store
+.idea/
+.vscode/

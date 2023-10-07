@@ -1,0 +1,8 @@
+{
+    "name": "Api-books",
+    "dockerComposeFile": ["../docker-compose.yml"],
+    "service": "api-books",
+    "shutdownAction": "none",
+    "extensions": ["johnpapa.vscode-peacock"],
+    "workspaceFolder": "/workspace/api-books"
+  }
