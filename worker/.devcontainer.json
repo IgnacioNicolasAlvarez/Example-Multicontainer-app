@@ -4,5 +4,6 @@
     "service": "worker",
     "shutdownAction": "none",
     "extensions": ["johnpapa.vscode-peacock"],
-    "workspaceFolder": "/workspace/worker"
+    "workspaceFolder": "/workspace/worker",
+    "forwardPorts": [5432, 8080, 6379]
   }

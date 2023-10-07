@@ -4,5 +4,6 @@
     "service": "api-books",
     "shutdownAction": "none",
     "extensions": ["johnpapa.vscode-peacock"],
-    "workspaceFolder": "/workspace/api-books"
+    "workspaceFolder": "/workspace/api-books",
+    "forwardPorts": [5432, 8080, 6379]
   }

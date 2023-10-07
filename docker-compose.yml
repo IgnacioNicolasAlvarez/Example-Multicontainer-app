@@ -1,7 +1,9 @@
 version: '3'
 services:
   api-books:
-    image: python:3.11-alpine
+    build:
+      context: ./api-books 
+      dockerfile: Dockerfile 
     volumes:
       - .:/workspace:cached
     command: /bin/sh -c "while sleep 1000; do :; done"
@@ -17,7 +19,9 @@ services:
       - network
 
   worker:
-    image: python:3.11-alpine
+    build:
+      context: ./worker 
+      dockerfile: Dockerfile 
     volumes:
       - .:/workspace:cached
     command: /bin/sh -c "while sleep 1000; do :; done"
