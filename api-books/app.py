@@ -1,14 +1,10 @@
-from litestar import Litestar, get
+from litestar import Litestar
 
+from src.controller.user import UserController
+from src.database.conn import db_connection, provide_transaction
 
-@get("/")
-async def index() -> str:
-    return "Hello, world!"
-
-
-@get("/books/{book_id:int}")
-async def get_book(book_id: int) -> dict[str, int]:
-    return {"book_id": book_id}
-
-
-app = Litestar([index, get_book])
+app = Litestar(
+    route_handlers=[UserController],
+    lifespan=[db_connection],
+    dependencies={"transaction": provide_transaction},
+)
