@@ -36,6 +36,8 @@ services:
 
   redis:
     image: redis
+    env_file:
+      - redis.env  
     networks:
       - network
 
